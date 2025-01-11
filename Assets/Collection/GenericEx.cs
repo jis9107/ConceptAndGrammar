@@ -16,5 +16,6 @@ public class GenericEx : MonoBehaviour
             target[i] = source[i];
         }
     }
+    
 }
 
