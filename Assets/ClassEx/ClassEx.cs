@@ -9,22 +9,21 @@ public class ClassEx : MonoBehaviour
     {
         Monster goblin; // 클래스를 자료형으로 식별자(변수)선언한다 -> 객체 생성 (빈 껍데기)
         goblin = new Monster(); 
-        // 인스턴스(Instance) 생성 -> Monster 클래스의 데이터를 통해 
+        // 인스턴스(Instance) 생성 -> Monster 클래스의 데이터를 통해 실질적인 goblin 생성
+        goblin.name = "Goblin";
         goblin.damage = 15;
         goblin.hp = 50;
-        
-        Debug.Log(goblin.damage);
-        Debug.Log(goblin.hp);
         
         goblin.Shout();
 
 
         Monster troll;
         troll = new Monster();
+        troll.damage = 10;
+        troll.hp = 100;
         
-        Debug.Log(troll.damage);
-        Debug.Log(troll.hp);
         troll.Shout();
+        
         
         
         Orc orc = new Orc(); // new라는 키워드를 통해 Orc 클래스로 새로운 객체 orc 인스턴스 생성 new는 새로운 대상을 만들 때 쓰인다.
@@ -40,12 +39,13 @@ public class ClassEx : MonoBehaviour
 
 public class Monster
 {
+    public string name;
     public int damage;
     public int hp;
 
     public void Shout()
     {
-        Debug.Log("소리 친다");
+        Debug.Log($"{name}의 공격력 : {damage}, 체력 : {hp}");
     }
 }
 

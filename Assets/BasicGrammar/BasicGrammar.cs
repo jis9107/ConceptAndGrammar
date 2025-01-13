@@ -34,10 +34,32 @@ public class BasicGrammar : MonoBehaviour
 
     */
 
+    public class Monster
+    {
+        public string name;
+        public int damage;
+        public int hp;
+
+        public Monster(string monsterName, int monsterDamage, int monsterHp)
+        {
+            name = monsterName;
+            damage = monsterDamage;
+            hp = monsterHp;
+        }
+
+        public void MonsterInfo()
+        {
+            Debug.Log($"{name}의 공격력 : {damage}, 체력 : {hp}");
+        }
+    }
+    
     void Start()
     {
-        IfEx ex = new IfEx();
-        ex.If();
+        BasicGrammar bc = new BasicGrammar();
+        
+        Monster goblin = new Monster("Goblin", 15, 100);
+        goblin.MonsterInfo();
     }
 }
+
 
