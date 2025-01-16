@@ -25,9 +25,4 @@ public class Multipleinheritance : MonoBehaviour
             Debug.Log("Lion Shout");
         }
     }
-
-    public class Liger : Tiger, Lion
-    {
-        
-    }
 }
