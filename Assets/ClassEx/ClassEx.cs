@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ClassEx : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         Monster goblin; // 클래스를 자료형으로 식별자(변수)선언한다 -> 객체 생성 (빈 껍데기)

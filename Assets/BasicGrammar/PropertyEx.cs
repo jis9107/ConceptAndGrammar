@@ -4,19 +4,7 @@ using UnityEngine;
 
 public class TestProperty
 {
-    private int num = 10;
-
-    public int Num
-    {
-        get { return num; }
-        set
-        {
-            if (value >= 100)
-                return;
-            num = value;
-        }
-    }
-    
+    public int Num { get; set; }
 }
 public class PropertyEx : MonoBehaviour
 {
@@ -25,7 +13,7 @@ public class PropertyEx : MonoBehaviour
     void Start()
     {
         Debug.Log(testProperty.Num);
-        testProperty.Num = 200;
+        testProperty.Num = 50;
         Debug.Log(testProperty.Num);
     }
 }
