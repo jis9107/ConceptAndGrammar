@@ -17,13 +17,17 @@ public class DelegateEx : MonoBehaviour
 
     public int TestInt(int num)
     {
-        return num;
+        Debug.Log($"{num} + {5} 반환");
+        return num + 5;
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        voidDelegate = Test;
+        intDelegate = num => TestInt(num);
+        voidDelegate();
+        intDelegate(5);
     }
     
     // 주의 할 점
