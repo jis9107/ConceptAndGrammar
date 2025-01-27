@@ -4,33 +4,44 @@ using UnityEngine;
 
 public class DelegateEx : MonoBehaviour
 {
-    public delegate void VoidDelegate(); // 델리게이트 타입 정의
-    public VoidDelegate voidDelegate; // 선언한 델리게이트의 변수(객체) 선언
-    
-    public delegate void IntDelegate(int num);
-    public IntDelegate intDelegate;
+    /*// 델리게이트 기본적인 사용 법
+    public delegate void MyDelegate(); // 델리게이트 타입 정의
+    public MyDelegate myDelegate; // 선언한 델리게이트의 변수(객체) 선언
 
     public void Test()
     {
         Debug.Log("Test 함수 실행");
     }
-
-    public int TestInt(int num)
-    {
-        Debug.Log($"{num} + {5} 반환");
-        return num + 5;
-    }
     
     // Start is called before the first frame update
     void Start()
     {
-        voidDelegate = Test;
-        intDelegate = num => TestInt(num);
-        voidDelegate();
-        intDelegate(5);
+        myDelegate = new MyDelegate(Test); // C# 1.0 버전 사용법
+        myDelegate = Test; // C# 2.0 버전 사용법
+        
+        myDelegate(); // 사용
+    }*/
+    
+    public delegate int IntDelegate(int num1, int num2);
+
+    public IntDelegate intDelegate;
+
+    public int Add(int num1, int num2)
+    {
+        return num1 + num2;
     }
-    
-    // 주의 할 점
-    // 반환 타입과 매개 변수를 동일하게 맞춰준다.
-    
+
+    public int Sub(int num1, int num2)
+    {
+        return num1 - num2;
+    }
+
+    void Start()
+    {
+        intDelegate = Add;
+        Debug.Log(intDelegate(10, 5));
+        intDelegate = Sub;
+        Debug.Log(intDelegate(10, 5));
+    }
+
 }
